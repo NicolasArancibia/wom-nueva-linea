@@ -1,4 +1,4 @@
-import { ReactNode } from 'react'
+import type { ReactNode } from 'react'
 
 interface Props {
   children: ReactNode
@@ -26,7 +26,6 @@ export default function MobileShell({ children }: Props) {
         flexDirection: 'column',
         position: 'relative',
       }}>
-        {/* Status bar simulada */}
         <div style={{
           height: '44px',
           background: '#fff',
@@ -45,8 +44,6 @@ export default function MobileShell({ children }: Props) {
             <span>🔋</span>
           </div>
         </div>
-
-        {/* Contenido de la pantalla */}
         <div style={{ flex: 1, display: 'flex', flexDirection: 'column', overflowY: 'auto' }}>
           {children}
         </div>

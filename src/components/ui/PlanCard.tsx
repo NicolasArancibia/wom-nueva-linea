@@ -1,4 +1,4 @@
-import { type Plan } from '../../features/activacion/activacion.types'
+import type { Plan } from '../../features/activacion/activacion.types'
 import WomButton from './WomButton'
 
 interface Props {
@@ -20,18 +20,14 @@ export default function PlanCard({ plan, onAgregar, evaluado }: Props) {
       minWidth: '200px',
       boxShadow: '0 1px 4px rgba(0,0,0,0.08)',
       position: 'relative',
+      flexShrink: 0,
     }}>
       {plan.recomendado && (
         <span style={{
-          position: 'absolute',
-          top: '-10px',
-          left: '12px',
-          background: '#9B00C4',
-          color: '#fff',
-          fontSize: '10px',
-          fontWeight: 700,
-          padding: '2px 10px',
-          borderRadius: '100px',
+          position: 'absolute', top: '-10px', left: '12px',
+          background: '#9B00C4', color: '#fff',
+          fontSize: '10px', fontWeight: 700,
+          padding: '2px 10px', borderRadius: '100px',
         }}>
           Recomendado
         </span>
@@ -49,14 +45,10 @@ export default function PlanCard({ plan, onAgregar, evaluado }: Props) {
 
       {plan.descuento && (
         <div style={{
-          background: '#F5E6FF',
-          color: '#7A009B',
-          borderRadius: '4px',
-          textAlign: 'center',
-          padding: '6px',
-          fontWeight: 700,
-          fontSize: '13px',
-          marginBottom: '12px',
+          background: '#F5E6FF', color: '#7A009B',
+          borderRadius: '4px', textAlign: 'center',
+          padding: '6px', fontWeight: 700,
+          fontSize: '13px', marginBottom: '12px',
         }}>
           {plan.descuento}% de descuento
         </div>
@@ -64,14 +56,10 @@ export default function PlanCard({ plan, onAgregar, evaluado }: Props) {
 
       <div style={{ display: 'flex', gap: '8px' }}>
         <button style={{
-          flex: 1,
-          padding: '8px',
-          border: '1px solid #dadce0',
-          borderRadius: '4px',
-          background: '#fff',
-          fontSize: '13px',
-          cursor: 'pointer',
-          color: '#5f6368',
+          flex: 1, padding: '8px',
+          border: '1px solid #dadce0', borderRadius: '4px',
+          background: '#fff', fontSize: '13px',
+          cursor: 'pointer', color: '#5f6368',
         }}>
           Detalles
         </button>
@@ -79,7 +67,7 @@ export default function PlanCard({ plan, onAgregar, evaluado }: Props) {
           onClick={() => evaluado && onAgregar(plan)}
           disabled={!evaluado}
         >
-          Agregar 🛒
+          Agregar
         </WomButton>
       </div>
     </div>
